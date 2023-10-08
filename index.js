@@ -1,22 +1,16 @@
 function isPalindrome(word) {
-  // Clean the input word by converting to lowercase and removing non-alphabetic characters
   const cleanedWord = word.toLowerCase().replace(/[^a-z]/g, '');
 
-  // Initialize pointers for the start and end of the cleaned word
   let left = 0;
   let right = cleanedWord.length - 1;
 
-  // Compare characters from the start and end, moving towards the center
   while (left < right) {
-    // If characters at the pointers don't match, it's not a palindrome
     if (cleanedWord[left] !== cleanedWord[right]) {
       return false;
     }
-    // Move the pointers inward
     left++;
     right--;
   }
-  // If the loop completes without returning false, it's a palindrome
   return true;
 }
 
@@ -37,9 +31,7 @@ function isPalindrome(word) {
   If the loop completes without finding any mismatch, the word is a palindrome, and the function returns true.
 */
 
-// You can run `node index.js` to view these console logs
 if (require.main === module) {
-  // add your own custom tests in here
   console.log("Expecting: true");
   console.log("=>", isPalindrome("racecar"));
 
